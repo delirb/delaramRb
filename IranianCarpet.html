@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iranian Carpet</title>
+    <style>
+      
+      h1 {
+        text-align: center;
+        color: rgb(28, 57, 187);
+      }
+
+      h2 {
+        text-align: center;
+        border: 1px solid #7d517d;
+        padding: 18px;
+        font-size: 20px;
+        border-radius: 4px;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 15px;
+      }
+      p {
+        line-height: 1.5;
+        font-size: 15px;
+        margin: 20px 0px 10px;
+      }
+      button {
+        display: block;
+        margin: 15px auto;
+        background: rgb(60, 64, 197);
+        color: cornsilk;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      button:hover {
+        opacity: 0.9;
+
+        cursor: pointer;
+      }
+      .learn-more {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: darkblue;
+      }
+      .learn-more:hover {
+        text-decoration: underline;
+      }
+      .source-by {
+        text-align: center;
+      }
+      .whole-page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="whole-page">
+      <h1>Iranian carpet is an elegant peice of art</h1>
+      <h2>A Great History</h2>
+      <p>
+        <strong> Iranian carpet</strong> , is a heavy textile made for a wide
+        variety of utilitarian and symbolic purposes and produced in Iran
+        (historically known as Persia), for home use, local sale, and export.
+        Carpet weaving is an essential part of Persian culture and Iranian art.
+        Within the group of Oriental rugs produced by the countries of the "rug
+        belt", the Persian carpet stands out by the variety and elaborateness of
+        its manifold designs.
+        <br />
+        <a
+          href="https://en.wikipedia.org/wiki/Persian_carpet"
+          target="_blank"
+          class="learn-more"
+        >
+          💙Learn more on wikipedia
+        </a>
+      </p>
+      <button class="see-more">Purchase</button>
+      <br />
+      <p class="source-by">
+        <hr />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/988/original/Q13740-3227-2T.jpg?1674408572"
+          alt="Iranian Carpet"
+          width="400"
+        />
+        <hr />
+        This Page is built by <strong>Delaram Rb</strong>
+        <a href="https://www.linkedin.com/in/delaramrabiei/" target="_blank">
+        </a>
+      </p>
+    </div>
+    <script>
+      function purchaseIt() {
+        let name = prompt("What is your Name?");
+        let number = prompt("What is your phone number?");
+        if (name.length > 0) {
+          alert("Thank You" + name + " We will call you with " + number + "😉");
+        }
+      }
+      let seemore = document.querySelector(".see-more");
+      seemore.addEventListener("click", purchaseIt);
+    </script>
+  </body>
+</html>
