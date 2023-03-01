@@ -1,135 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Weather Forecast</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delaram</title>
-    <style>
-      li {
-        list-style: none;
-      }
-      .free {
-        color: blue;
-      }
-      .premium {
-        color: red;
-      }
-      .test {
-        color: greenyellow;
-      }
-      h1 {
-        color: #885df1;
-        font-size: 48px;
-        text-align: center;
-        text-decoration-line: underline;
-        font-weight: lighter;
-        padding: 20px;
-        margin: 20px auto;
-      }
-      p {
-        color: black;
-        text-align: center;
-      }
-      h2 {
-        color: #272044;
-        font-size: medium;
-        text-align: center;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0 auto;
-        text-align: center;
-        font-size: 18px;
-      }
-      li {
-        margin: 0 10px;
-        display: inline-block;
-      }
-      body {
-        background-color: aliceblue;
-      }
-      img {
-        display: block;
-        margin: 0 auto;
-        padding: 10px;
-        background-color: #dcb5ff;
-        border: 5px solid #272044;
-      }
-      button {
-        display: block;
-        margin: 0 auto;
-        color: beige;
-        background-color: #272044;
-        font-size: 30px;
-        border: 2px solid #272044;
-        border-radius: 4px;
-        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
-        transition: all 1s ease-in-out;
-      }
+    <link href="src/styles.css"/>
+    <link href="src/index.js"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-      button:hover {
-        background-color: beige;
-        color: #272044;
-        cursor: pointer;
-      }
-      .highlight {
-        color: #272044;
-      }
-      div {
-        color: #885df1;
-        text-align: center;
-        margin-top: 10px;
-      }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/89fcb2fa34.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&family=PT+Mono&family=Poppins:ital,wght@0,900;1,100&family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 
   </head>
 
   <body>
-    <h1>SheCodes</h1>
-    <h2>Coding workShop</h2>
-    <button>Apply now!</button>
-    <ul>
-      <li>
-        <a
-          href="https://www.shecodes.io/students/"
-          target="_blank"
-          class="free"
-        >
-          Coders
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.shecodes.io/workshops/"
-          target="_blank"
-          class="premium"
-        >
-          Courses
-        </a>
-      </li>
-      <li>
-        <a
-          href="Stories to https://www.shecodes.io/stories/"
-          target="_blank"
-          class="test"
-        >
-          Stories
-        </a>
-      </li>
-    </ul>
-    <hr />
-    <p>
-      <strong> More info </strong>
-    </p>
-    <img
-      src="https://s3.amazonaws.com/utep-uploads/wp-content/uploads/unr/2020/09/22101727/unr-mscy-coding-for-kids-and-teens-image.jpg"
-      width="400"
-    />
-    <div>
-      Email:
-      <span class="highlight">hello@shecodes.io</span>
-      Instagram:
-      <span class="highlight">@shecodes.io</span>
+    <h1>
+      Esfahan
+    </h1>
+    <h2>
+      Weather Forecast
+    </h2>
+    <br />
+    <div class="row search"
+    id="search-Form">
+      <div class="col-6">
+        <input type="text"  id="changeit" class="form-control" placeholder="Another City" />
+      </div>
+      <div class="col-3">
+        <input
+        id="searchbtn"
+          type="submit"
+          class="form-control btn btn-primary"
+          value="Search"
+        />
+      </div>
+      <div class="col-3">
+        <input
+        id="Cuurntbtn"
+          type="submit"
+          class="form-control btn btn-success"
+          value="Current"
+        />
+      </div>
     </div>
+    <div class="today">
+      <strong> Sunday</strong>
+      <img src="imgs/sunday.png" alt="" class="sunday" width="150" />
+      <div class="row todayinfo">
+        <h3> 
+
+
+        </h3>
+        <div class="col-4">
+          Tempreture:
+          <span id="temp">11</span>
+        </br>
+          <span id="changeToC">
+            °C |
+          </span>
+          <span id="changeToF">
+            °F
+          </span>
+        </div>
+        <div class="col-4" id="description">
+          description:
+          <br/>
+          mild
+        </div>
+        <div class="col-4">
+          Wind:
+          <br />
+          18.2 km/h
+          <br />
+          ⛈
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-2 text-primary">
+          Monday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp:
+              <br />
+              16°C
+              <br />
+              -2°C
+            </div>
+            <br />
+            <div class="row-2">
+              Wind:
+              <br />
+              11.1 <br />
+              km/h
+            </div>
+            ☀
+          </div>
+        </div>
+        <div class="col-2 text-success">
+          Thuesday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp:
+              <br />
+              12°C <br />-3°C
+            </div>
+            <br />
+            <div class="row-2">
+              Wind:
+              <br />
+              21.4 <br />
+              km/h
+            </div>
+            ☀
+          </div>
+        </div>
+        <div class="col-2 text-danger">
+          Wednesday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp: <br/>
+              8°C
+              <br/>
+              -5°C
+            </div>
+            <br />
+            <div class="row-2">
+              Wind: <br />
+              13.1 <br />km/h
+            </div>
+            ☀
+          </div>
+        </div>
+        <div class="col-2 text-warning">
+          Thursday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp: <br />
+              7°C
+              <br />
+              -4°C
+            </div>
+            <br />
+            <div class="row-2">Wind: <br />9.3 <br />km/h</div>
+            🌥
+          </div>
+        </div>
+        <div class="col-2 text-info">
+          Friday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp: <br />
+              9°C
+              <br />
+              -1°C
+            </div>
+            <br />
+            <div class="row-2">
+              Wind:
+              <br />9.3 <br />km/h
+            </div>
+            🌧
+          </div>
+        </div>
+        <div class="col-2 text-secondary">
+          Saturday
+          <div class="info text-dark">
+            <br />
+            <div class="row-2">
+              Temp: <br />
+              11°C
+              <br />
+              -3°C
+            </div>
+            <br />
+            <div class="row-2">
+              Wind:
+              <br />
+              9.3
+              <br />km/h
+            </div>
+            ☁
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="imgs/general.png" alt="" width="300" />
+    <h6>
+      Written By DELARAM <a href=""> (open source)</a>
+    </h6>
+    <script src="src/index.js"></script>
   </body>
 </html>
